@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+:root{
+    --line-border-empyt:#ccc;
+    --line-border-fill:#dc4c4c;
+
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgb(42, 35, 185) 0%, rgb(159, 156, 158) 41%, rgba(0,212,255,1) 100%);
+}
+
+.container{
+    text-align: center;
+}
+.progress-container{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    gap: 10px;
+    cursor: pointer;
+    width: 350px;
+    max-width: 100%;
+    color: #d82bb0;
+    text-shadow: 1px 1px 4px #0e0202;
+    margin-bottom: 30px;
+}
+.progress-container::before{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    content:'';
+    z-index: -1;
+    background-color: var(--line-border-empyt);
+    height: 4px;
+    width: 100%;
+    transition: .4s ease;
+}
+.progress{
+    height: 4px;
+    width: 0%;
+    background-color: var(--line-border-fill);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: .4s ease;
+}
+.circle{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 3px solid var(--line-border-empyt);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s ease;
+}
+
+.circle.active{
+    border-color:var(--line-border-fill) ;
+}
+.btn{
+    background-color: var(--line-border-fill);
+    /* background-color: var(--line-border-fill); */
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    padding: 8px 24px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1em;
+    margin: 5px;
+
+}
+.btn:focus{
+    outline: none;
+}
+.btn:active{
+    transform: scale(0.98);
+}
+.btn:disabled{
+    background: var(--line-border-empyt);
+}
